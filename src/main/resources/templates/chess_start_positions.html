@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+	<title>Chess</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		th {
+			width: 10em;
+		}
+
+		td {
+			text-align: center;
+		}
+
+		.containerStyle {
+			padding-bottom: 20px;
+
+			padding-left: 2%;
+			margin-left: 15%;
+			margin-top: 2%;
+			width: 60%;
+			height: max-content;
+			border: 1px solid black;
+			border-radius: 4%;
+			overflow: hidden;
+			position: relative;
+		}
+
+		div>table {
+			float: left;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="containerStyle">
+		<p>
+			<strong>Chess Starting Positions</strong>
+		</p>
+		<table style="width:40%;" border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Side</th>
+					<th>Type</th>
+					<th>Position</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="piece:${whitePieces}">
+					<td th:text="${piece.side}"></td>
+					<td th:text="${piece.type}"></td>
+					<td th:text="${piece.position}"></td>
+
+				</tr>
+			</tbody>
+		</table>
+
+		<table style="width:40%" border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Side</th>
+					<th>Type</th>
+					<th>Position</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="piece:${blackPieces}">
+					<td th:text="${piece.side}"></td>
+					<td th:text="${piece.type}"></td>
+					<td th:text="${piece.position}"></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<button><a style=" text-decoration-line:none;color: black;" th:href="@{/home}">Back</a></button><br />
+	</div>
+
+</body>
+
+
+</html>
+
+<!--
+<td> <a th:href="@{/showFormForUpdate/{id}(id=${piece.id})}" class="btn btn-primary">Update</a>
+						<a th:href="@{/deletepiece/{id}(id=${piece.id})}" class="btn btn-danger">Delete</a>
+					</td>
+					-->

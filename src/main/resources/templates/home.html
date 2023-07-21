@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<style>
+		.containerStyle {
+			padding-bottom: 20px;
+			padding-left: 2%;
+			margin-left: 15%;
+			margin-top: 2%;
+			width: 65%;
+			border: 1px solid black;
+			border-radius: 4%;
+		}
+
+		.textStyle1 {
+			height: 8em;
+		}
+
+		.textStyle2 {
+			height: 2em;
+		}
+
+		.bulletStyle {
+			height: 3em;
+		}
+	</style>
+	<title>Spring Boot Demo </title>
+</head>
+
+<body>
+	<div class="containerStyle">
+		<h1>Spring Boot Demo for Dependency Injection</h1>
+
+		<div class="textStyle1">
+			<h2>Click <a th:href="@{/chess_start_positions}">here</a> to view next page.<br /></h2>
+			<p>Next page shows a table with Chess starting positions.<br /><br />If we code this without Spring
+				Dependency Injection, we will need to create 1 class for each piece, which means <strong>32</strong> more classes
+				for this project
+			</p>
+		</div>
+
+		<div class="bulletStyle">
+			<li>src\main\java\com\example\chessDemo\model\Piece.java - Model</li>
+			<li>src\main\resources\templates\chess_start_positions.html - View</li>
+			<li>src\main\java\com\example\chessDemo\controller\ChessController.java - Controller</li>
+		</div>
+		<p>Dependency Injection can be a good or bad, depending on the problem<br />
+			Dependency Injection if done lightly, like in this case, lead to clear code design<br />
+			Dependency Injection if done extensively, may not be good for maintenance<br />
+		</p>
+	</div>
+
+
+</body>
+
+</html>
